@@ -6,14 +6,12 @@ contract Whitelist {
    }
    
     Person[] public persons; // Tableau dynamique de type Person
-    function add (string memory _name, uint _age) public {
-      Person memory person;
-      person.name = "_name";
-      person.age = _age;
-      persons.push(person);
+    function add(string memory _name, uint _age) public {
+      Person memory person = Person(_name,_age); // Ajout d'un objet person avec la structure Person
+      persons.push(person); // Ajout de l'objet person dans le tableau persons
 
    }
-   function remove (string memory _name, uint _age) public {
-       persons.pop();
+   function remove() public {
+       persons.pop();// Suppression du dernier objet person du tableau persons
    }
 }
