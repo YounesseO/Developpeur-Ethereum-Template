@@ -7,9 +7,7 @@ contract Whitelist {
     }
 
     function addPerson(string memory _name, uint _age) public {
-        Person memory person;
-        person.name = _name;
-        person.age = _age;
+        Person memory person = Person(_name,_age);
 
     }
 }
